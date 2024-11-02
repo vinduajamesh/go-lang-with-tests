@@ -8,16 +8,12 @@ import (
 func TestWallet(t *testing.T) {
 	t.Run("Deposit", func(t *testing.T) {
 		wallet := Wallet{}
-
 		wallet.Deposit(Bitcoin(10))
-
 		assertBalance(t, wallet, Bitcoin(10))
 	})
 	t.Run("Withdraw", func(t *testing.T) {
 		wallet := Wallet{balance: Bitcoin(20)}
-
 		err := wallet.Withdraw(Bitcoin(10))
-
 		assertNoError(t, err)
 		assertBalance(t, wallet, Bitcoin(10))
 	})

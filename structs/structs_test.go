@@ -6,10 +6,8 @@ import (
 
 func TestPerimeter(t *testing.T) {
 	r := Rectangle{10.0, 10.0}
-
 	got := Perimeter(r)
 	want := 40.0
-
 	if got != want {
 		t.Errorf("got %.2f want %.2f", got, want)
 	}
@@ -29,7 +27,6 @@ func TestArea(t *testing.T) {
 	for _, v := range areaTests {
 		t.Run(v.Name, func(t *testing.T) {
 			a := v.Shape.Area()
-
 			if a != v.HasArea {
 				t.Errorf("%#v got %g want %g", v.Shape, a, v.HasArea)
 			}
